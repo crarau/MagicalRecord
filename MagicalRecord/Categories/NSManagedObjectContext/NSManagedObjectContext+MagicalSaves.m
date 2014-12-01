@@ -39,7 +39,7 @@
     BOOL saveParentContexts = ((mask & MRSaveParentContexts) == MRSaveParentContexts);
 
     if (![self hasChanges]) {
-        MRLog(@"NO CHANGES IN ** %@ ** CONTEXT - NOT SAVING", [self MR_workingName]);
+        //MRLog(@"NO CHANGES IN ** %@ ** CONTEXT - NOT SAVING", [self MR_workingName]);
 
         if (completion)
         {
@@ -51,9 +51,9 @@
         return;
     }
 
-    MRLog(@"→ Saving %@", [self MR_description]);
-    MRLog(@"→ Save Parents? %@", @(saveParentContexts));
-    MRLog(@"→ Save Synchronously? %@", @(syncSave));
+    //MRLog(@"→ Saving %@", [self MR_description]);
+    //MRLog(@"→ Save Parents? %@", @(saveParentContexts));
+    //MRLog(@"→ Save Synchronously? %@", @(syncSave));
 
     id saveBlock = ^{
         NSError *error = nil;
@@ -88,7 +88,7 @@
                 }
                 // If we should not save the parent context, or there is not a parent context to save (root context), call the completion block
                 else {
-                    MRLog(@"→ Finished saving: %@", [self MR_description]);
+                    //MRLog(@"→ Finished saving: %@", [self MR_description]);
                     
                     if (completion) {
                         dispatch_async(dispatch_get_main_queue(), ^{
