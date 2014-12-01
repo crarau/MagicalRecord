@@ -51,7 +51,7 @@
 
     if (!hasChanges)
     {
-        MRLogVerbose(@"NO CHANGES IN ** %@ ** CONTEXT - NOT SAVING", [self MR_workingName]);
+        //MRLogVerbose(@"NO CHANGES IN ** %@ ** CONTEXT - NOT SAVING", [self MR_workingName]);
 
         if (completion)
         {
@@ -71,9 +71,9 @@
                              (shouldSaveSynchronouslyExceptRoot && (self != [[self class] MR_rootSavingContext]));
 
     id saveBlock = ^{
-        MRLogInfo(@"→ Saving %@", [self MR_description]);
-        MRLogVerbose(@"→ Save Parents? %@", shouldSaveParentContexts ? @"YES" : @"NO");
-        MRLogVerbose(@"→ Save Synchronously? %@", saveSynchronously ? @"YES" : @"NO");
+        //MRLogInfo(@"→ Saving %@", [self MR_description]);
+        //MRLogVerbose(@"→ Save Parents? %@", shouldSaveParentContexts ? @"YES" : @"NO");
+        //MRLogVerbose(@"→ Save Synchronously? %@", saveSynchronously ? @"YES" : @"NO");
 
         BOOL saveResult = NO;
         NSError *error = nil;
@@ -111,7 +111,7 @@
             {
                 if (saveResult)
                 {
-                    MRLogVerbose(@"→ Finished saving: %@", [self MR_description]);
+                    //MRLogVerbose(@"→ Finished saving: %@", [self MR_description]);
                 }
 
                 if (completion)
